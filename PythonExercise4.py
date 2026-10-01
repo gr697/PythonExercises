@@ -1,4 +1,4 @@
-
+import math
 '''
 Question 1:
 
@@ -6,7 +6,13 @@ Write a function(s) that converts an octal number, represented as a string into 
 '''
 
 def octalToDecimal(oct):
-  return 42
+  thou = oct // 1000
+  hund = (oct - thou) // 100
+  ten = (oct - (thou*100) - (hund*100))// 10
+  digit = (oct - (thou*100) - (hund*100) - (ten*10))
+  print(ten)
+  print(digit)
+  return (thou * pow(8,3) + (hund*pow(8,2)) + (ten*pow(8,1)) + (digit*pow(8,0)))
 
 '''
 Question 2: 
@@ -33,5 +39,4 @@ def printTree(width,trunk):
   print("   ***")
   print("   ***")
 
-print(octalToDecimal(52));
-printTree(5,2)
+

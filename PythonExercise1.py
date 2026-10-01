@@ -1,4 +1,4 @@
-
+import math
 '''
 Question 1: 
  
@@ -7,7 +7,7 @@ Question 1:
  
 def printn():
  n = 5
- n = ((((n + 3)*2)-4)-2n)+3
+ n = ((((n + 3)*2)-4)-(2*n))+3
  print(n)
 
 
@@ -30,8 +30,8 @@ def printXTenTimes(x):
  print(x+7);
  print(x+8);
  print(x+9);
- print(x+10);
 
+'''
 Question 3: 
  
  Complete the function below so that it converts the height of a person from centimetres to feet and inches. Use integer division (rounding down is acceptable, which is the default for integer division). 
@@ -50,9 +50,9 @@ Question 3:
 '''
 
 def convertMetricToImperialHeights(cm):
- inches = cm/2.54
- feet = int(inches/12)
- remainder = round(inches%12)
+ inches = cm//2.54
+ feet = int(inches//12)
+ remainder = int(inches%12)
  print(str(cm) + " is " + str(feet) + " feet " + str(remainder) + " inches to the nearest inch.");
 
 '''
@@ -69,13 +69,16 @@ Question 4:
 
 def fibonacci():
  i = 0
- current = 0
+ current = 1
+ prev = 0
+ next = 0
+ print(str(prev)+ "\n" + str(current))
  for i in range(10):
- next = current + prev
- prev = current
- current = next
- print(str(current))
- i = i + 1
+  next = current + prev
+  prev = current
+  current = next
+  print(str(current))
+  i = i + 1
  
 
 '''
@@ -94,21 +97,9 @@ def fibonacci():
  the cylinder with height 7.0cm and radius 4.0cm has a volume of 351.86cm^3
 '''
 
-def volumeOfACylinder():
-  print("the cylinder with height 7.0cm and radius 4.0cm has a volume of 351.86cm^3")
+def volumeOfACylinder(H,rad):
+  AreaCircle = math.pi*rad*rad
+  VolumeCylinder = AreaCircle*H
+  print("the cylinder with height " + str(H) + " and radius " + str(rad) + " has a volume of " + str(VolumeCylinder))
 
 
-print("Question 1\n");
-printHelloWorld();
-
-print("\nQuestion 2\n");
-printXTenTimes();
-
-print("\nQuestion 3\n");
-convertMetricToImperialHeights();
-
-print("\nQuestion 4\n");
-fibonacci();
-
-print("\nQuestion 5\n");
-volumeOfACylinder();

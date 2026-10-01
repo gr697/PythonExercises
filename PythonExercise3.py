@@ -6,6 +6,7 @@
 '''
 
 def mod(number, by):
-  return number%by 
-
-print(str(mod(3,2)));
+  if number%by == 0:
+    return "true"
+  else:
+    return "false"
