@@ -5,8 +5,11 @@ Question 1:
  Adapt the “HelloWorld” code below to produce a program that defines a variable capable of holding an integer of your choice. The program should add 3 to that number, multiply the result by 2, subtract 4, subtract twice the original number, add 3, then print the result and a new line.
 '''
  
-def printHelloWorld():
-  print("Hello, world!");
+def printn():
+ n = 5
+ n = ((((n + 3)*2)-4)-2n)+3
+ print(n)
+
 
 '''
 Question 2: 
@@ -16,10 +19,19 @@ Question 2:
  Call this function from the main to test your program.
 '''
 
-def printXTenTimes():
-  print(str(3));
+def printXTenTimes(x):
+ print(x);
+ print(x+1);
+ print(x+2);
+ print(x+3);
+ print(x+4);
+ print(x+5);
+ print(x+6);
+ print(x+7);
+ print(x+8);
+ print(x+9);
+ print(x+10);
 
-'''
 Question 3: 
  
  Complete the function below so that it converts the height of a person from centimetres to feet and inches. Use integer division (rounding down is acceptable, which is the default for integer division). 
@@ -28,15 +40,20 @@ Question 3:
  
  Call this function from the main to test your program.  For example you could test your program with the follow five values, where "?" replaced with the true value.
 
- 101 cm is 3 feet 3 inches to the nearest inch.
+ 
+
+101 cm is 3 feet 3 inches to the nearest inch.
  3 cm is 0 feet 1 inches to the nearest inch.
  15 cm is ? feet ? inches to the nearest inch.
  192 cm is ? feet ? inches to the nearest inch.
  124 cm is ? feet ? inches to the nearest inch.
 '''
 
-def convertMetricToImperialHeights():
-  print(str(101) + " is 3 feet 3 inches to the nearest inch.");
+def convertMetricToImperialHeights(cm):
+ inches = cm/2.54
+ feet = int(inches/12)
+ remainder = round(inches%12)
+ print(str(cm) + " is " + str(feet) + " feet " + str(remainder) + " inches to the nearest inch.");
 
 '''
 Question 4: 
@@ -51,7 +68,15 @@ Question 4:
 '''
 
 def fibonacci():
-  print(str(2));
+ i = 0
+ current = 0
+ for i in range(10):
+ next = current + prev
+ prev = current
+ current = next
+ print(str(current))
+ i = i + 1
+ 
 
 '''
  Question 5: 
